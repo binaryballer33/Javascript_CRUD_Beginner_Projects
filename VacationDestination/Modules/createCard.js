@@ -75,7 +75,7 @@ export default function createCard(event) {
     seeMoreLink.classList.add("card-text");
     seeMoreLink.innerText = "Click Me to See More";
     seeMoreLink.addEventListener("click", (event) => {
-      window.open("../Html/cardBodyDiv.html", "_blank");
+      window.open("../layouts/cardBodyDiv.html", "_blank");
       localStorage.setItem("card", vacationDiv.outerHTML);
     });
     cardBodyDiv.appendChild(seeMoreLink);
