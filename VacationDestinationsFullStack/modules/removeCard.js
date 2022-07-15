@@ -1,3 +1,6 @@
+  /**
+   * this function removes the card objects from the dom after first removing it from the database
+   */
 export default function removeCard(event){
     const card = event.target.parentElement.parentElement.parentElement;
     const cardId = event.target.parentElement.parentElement.parentElement.id;
@@ -15,8 +18,9 @@ export default function removeCard(event){
           destinationName: destinationName
         })
       })
-      .then((response) => {
-        card.remove();
-        return response.json;
-      })
+    .then((response) => {
+      card.remove();
+      return response.json;
+    })
+    .catch((error) => console.error(error))
 }

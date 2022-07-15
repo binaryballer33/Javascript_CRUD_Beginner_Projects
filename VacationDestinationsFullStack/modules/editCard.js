@@ -1,7 +1,9 @@
 import API_KEY from "../ApiKeys/unsplashKey.js";
 import getDestionationPic from "./getDestinationPic.js";
 
-
+/**
+ * this function edits the card objects on the dom after first updating it in the database
+ */
 export default async function editCard(event) {
     const cardTitle = event.target.parentElement.parentElement.children[0];
     let newName = prompt("Enter new name");
@@ -29,9 +31,10 @@ export default async function editCard(event) {
           imageUrl: imageUrl,
         })
       })
-      .then(() => {
-        cardTitle.innerText = newName;
-        cardSubTitle.innerText = newLocation;
-        img.setAttribute("src", imageUrl)
-      })
+    .then(() => {
+      cardTitle.innerText = newName;
+      cardSubTitle.innerText = newLocation;
+      img.setAttribute("src", imageUrl)
+    })
+    .catch((error) => console.error(error))
 }

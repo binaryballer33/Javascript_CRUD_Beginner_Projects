@@ -86,7 +86,6 @@ MongoClient.connect(connectionString, {useNewUrlParser: true})
               if (result.deletedCount === 0) {
                  return res.json({message: "All the destinations have been deleted", result: result}) 
               }
-            console.log("Deleted");
             return res.json({message: `Destination has been deleted`, result: result})
           })
           .catch(error => console.error(error))

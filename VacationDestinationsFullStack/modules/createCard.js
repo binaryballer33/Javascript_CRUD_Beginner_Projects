@@ -3,7 +3,10 @@ import removeCard from "./removeCard.js";
 import UNSPLASH_API_KEY from "../ApiKeys/unsplashKey.js";
 import getDestinationPic from "../modules/getDestinationPic.js";
 
-// once addToList button is click it will run this function
+/**
+ * this function is used to create cards inside of the database, then once they are in the database
+ * this function will manipulate the dom and post the card
+ */
 export default async function createCard(event) {
     // prevent bad stuff from happening, find out more about what this does!!!
     event.preventDefault();
@@ -108,4 +111,5 @@ export default async function createCard(event) {
       vacationDiv.appendChild(cardBodyDiv);
       myWishListContainerDiv.appendChild(vacationDiv);
     })
+    .catch((error) => console.error(error))
   }
