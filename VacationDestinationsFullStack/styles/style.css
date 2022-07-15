@@ -1,0 +1,19 @@
+#destinations_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buttons_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit_btn {
+    width: 100%;
+}
+
+#title {
+    text-align: center;
+}

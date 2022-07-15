@@ -1,0 +1,61 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="/quotesFirstCRUDApp/styles/style.css"> -->
+    <!-- JS-->
+    <title>My Quotes CRUD App</title>
+</head>
+<body>
+    <h1> May Node and Express be with you. </h1>
+    
+    <!-- This will be a HTTP POST(CREATE) request, that will be sent to the /qoutes dir-->
+    <form action="/quotes" method="POST">
+        <input type="text" placeholder="name" name="name">
+        <input type="text" placeholder="quote" name="quote">
+        <button type="submit">Submit</button>
+    </form>
+    
+    <h2> Quotes </h2>
+
+    <ul class="quotes">
+        <!-- Loop throught quotes -->
+        <% for(var i = 0; i < quotes.length; i++) {%>
+            <li class="quote">
+                <!-- Output name from the iterated quote object -->
+                <span><%= quotes[i].name %></span>:
+                <!-- Output quotes from the iterated quote object -->
+
+                <span><%= quotes[i].quote %></span>
+            </li>
+        <% } %>
+
+        <div>
+            <h2>Pain is weakness leaving the body</h2>
+            <p> Replace First Ballislife Quote </p>
+            <button id="update-button"> Replace First Ballislife Quote</button>  
+        </div>
+
+        <div>
+            <h2>Remove Quote</h2>
+            <p>
+              Delete one Shaquille Mandy's quote. Does nothing if there are no more Darth
+              Vader's quote
+            </p>
+            <button id="delete-button">Delete Darth Vader's quote</button>
+        </div>
+
+        <div id="message"></div>
+    </ul>
+    <script src="/main.js"></script>
+</body>
+</html>
