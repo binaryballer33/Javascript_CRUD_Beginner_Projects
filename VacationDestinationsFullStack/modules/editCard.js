@@ -25,7 +25,7 @@ export default async function editCard(event) {
           'Accept': 'application/json',
         },
         body: JSON.stringify({
-          _id: id,
+          id: id,
           destinationName: newName,
           destinationLocation: newLocation,
           imageUrl: imageUrl,

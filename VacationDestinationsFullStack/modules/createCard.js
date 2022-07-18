@@ -103,7 +103,7 @@ export default async function createCard(event) {
       return response.json()
     })
     .then((data) => {
-      const id = data.result.insertedId
+      const id = data.response._id;
       img.setAttribute("src", imageUrl)
       vacationDiv.appendChild(img);
       cardBodyDiv.appendChild(buttonsContainer);

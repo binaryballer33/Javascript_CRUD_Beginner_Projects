@@ -20,7 +20,7 @@ window.onload = async () => {
     fetch("http://localhost:3000/destinations")
     .then((response) => response.json())
     .then((data) => {
-        for(let card of data.results) {
+        for(let card of data.response) {
             // change the value of this tag
             let enterDestinationDetails = document.querySelector("#title");
             enterDestinationDetails.innerText = "My WishList";
@@ -88,5 +88,4 @@ window.onload = async () => {
             myWishListContainerDiv.appendChild(vacationDiv); 
         }
     })
-    .catch((error) => console.error(error))
 }
